@@ -17,12 +17,12 @@ class MainViewController: UIViewController {
     @IBOutlet var durationLabel: UILabel!
     @IBOutlet var delayLabel: UILabel!
     
-    private var animation = Animation(randomly: true)
+    private var animation = Animation(random: true)
     
     @IBAction func runAnimationBtnPressed() {
         updateInfoOnLabels()
         animateSpringView()
-        animation = Animation(randomly: true)
+        animation = Animation(random: true)
         runAnimationBtn.setTitle("Run - '\(animation.preset.rawValue)'", for: .normal)
     }
     

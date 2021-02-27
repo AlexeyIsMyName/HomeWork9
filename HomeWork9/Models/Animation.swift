@@ -41,6 +41,7 @@ struct Animation {
         case wobble
         case swing
         
+        //Метод скопировал из документации RandomNumberGenerator
         static func random<G: RandomNumberGenerator>(using generator: inout G) -> Preset {
                 return Preset.allCases.randomElement(using: &generator)!
         }
@@ -82,6 +83,7 @@ struct Animation {
         case easeOutBack
         case easeInOutBack
         
+        //Метод скопировал из документации RandomNumberGenerator
         static func random<G: RandomNumberGenerator>(using generator: inout G) -> Curve {
                 return Curve.allCases.randomElement(using: &generator)!
         }
@@ -92,11 +94,11 @@ struct Animation {
         }
     }
     
-    init(randomly: Bool) {
+    init(random _: Bool?) {
         preset = Preset.random()
         curve = Curve.random()
-        force = Double.random(in: 0...1)
-        duration = Double.random(in: 0...1)
+        force = Double.random(in: 1...2)
+        duration = Double.random(in: 1...2)
         deley = Double.random(in: 0...1)
     }
 }
