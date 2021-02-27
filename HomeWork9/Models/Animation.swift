@@ -6,12 +6,6 @@
 //
 
 struct Animation {
-    let preset: Preset
-    let curve: Curve
-    let force: Double
-    let duration: Double
-    let deley: Double
-    
     enum Preset: String, CaseIterable {
         case slideLeft
         case slideRight
@@ -94,6 +88,14 @@ struct Animation {
         }
     }
     
+    // MARK: - Properties
+    let preset: Preset
+    let curve: Curve
+    let force: Double
+    let duration: Double
+    let deley: Double
+    
+    // MARK: - Random Initializer
     init(random _: Bool?) {
         preset = Preset.random()
         curve = Curve.random()

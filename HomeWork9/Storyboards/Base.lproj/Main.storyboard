@@ -38,31 +38,31 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Gx-Wq-44p">
                                         <rect key="frame" x="8" y="8" width="246.5" height="151"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="preset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3p-Qi-kue">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="preset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3p-Qi-kue" customClass="SpringLabel" customModule="Spring">
                                                 <rect key="frame" x="0.0" y="0.0" width="246.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="curve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdY-OM-ySw">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="curve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdY-OM-ySw" customClass="SpringLabel" customModule="Spring">
                                                 <rect key="frame" x="0.0" y="30" width="246.5" height="30.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="force" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2K6-bc-Bae">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="force" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2K6-bc-Bae" customClass="SpringLabel" customModule="Spring">
                                                 <rect key="frame" x="0.0" y="60.5" width="246.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL9-nb-RSO">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL9-nb-RSO" customClass="SpringLabel" customModule="Spring">
                                                 <rect key="frame" x="0.0" y="90.5" width="246.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="delay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4K-WA-GAZ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="delay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4K-WA-GAZ" customClass="SpringLabel" customModule="Spring">
                                                 <rect key="frame" x="0.0" y="120.5" width="246.5" height="30.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -98,13 +98,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="curveLabel" destination="rdY-OM-ySw" id="L4X-7Z-ZFc"/>
-                        <outlet property="delayLabel" destination="k4K-WA-GAZ" id="oYg-tx-2ch"/>
-                        <outlet property="durationLabel" destination="bL9-nb-RSO" id="cba-tH-wda"/>
-                        <outlet property="forceLabel" destination="2K6-bc-Bae" id="u8r-B5-4E3"/>
-                        <outlet property="presetLabel" destination="Y3p-Qi-kue" id="y16-6W-rvq"/>
                         <outlet property="runAnimationBtn" destination="iHE-Rp-sc4" id="2bR-FX-JsM"/>
                         <outlet property="springAnimationView" destination="Rf4-r3-WxG" id="Xvm-gP-zzp"/>
+                        <outletCollection property="springLabels" destination="k4K-WA-GAZ" collectionClass="NSMutableArray" id="Tqu-lj-jdi"/>
+                        <outletCollection property="springLabels" destination="bL9-nb-RSO" collectionClass="NSMutableArray" id="hQr-G0-b3h"/>
+                        <outletCollection property="springLabels" destination="2K6-bc-Bae" collectionClass="NSMutableArray" id="h1o-cK-1pr"/>
+                        <outletCollection property="springLabels" destination="rdY-OM-ySw" collectionClass="NSMutableArray" id="h6n-ds-YqK"/>
+                        <outletCollection property="springLabels" destination="Y3p-Qi-kue" collectionClass="NSMutableArray" id="fWQ-BH-9lE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

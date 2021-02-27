@@ -8,24 +8,30 @@
 import Spring
 
 class MainViewController: UIViewController {
+    // MARK: - IB Outlets
     @IBOutlet var springAnimationView: SpringView!
     @IBOutlet var runAnimationBtn: UIButton!
+    @IBOutlet var springLabels: [SpringLabel]!
     
-    @IBOutlet var presetLabel: UILabel!
-    @IBOutlet var curveLabel: UILabel!
-    @IBOutlet var forceLabel: UILabel!
-    @IBOutlet var durationLabel: UILabel!
-    @IBOutlet var delayLabel: UILabel!
-    
+    // MARK: - Private properties
     private var animation = Animation(random: true)
     
+    // MARK: - Override methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateInfoOnLabels()
+    }
+    
+    // MARK: - IB Actions
     @IBAction func runAnimationBtnPressed() {
+        animateSpringLabels()
         updateInfoOnLabels()
         animateSpringView()
         animation = Animation(random: true)
         runAnimationBtn.setTitle("Run - '\(animation.preset.rawValue)'", for: .normal)
     }
     
+    // MARK: - Private methods
     private func animateSpringView() {
         springAnimationView.animation = animation.preset.rawValue
         springAnimationView.curve = animation.curve.rawValue
@@ -36,10 +42,23 @@ class MainViewController: UIViewController {
     }
     
     private func updateInfoOnLabels() {
-        presetLabel.text = "preset: \(animation.preset.rawValue)"
-        curveLabel.text = "curve: \(animation.curve.rawValue)"
-        forceLabel.text = "force: " + String(format: "%.2f", animation.force)
-        durationLabel.text = "duration: " + String(format: "%.2f", animation.duration)
-        delayLabel.text = "delay: " + String(format: "%.2f", animation.deley)
+        for springLabel in springLabels {
+            switch springLabel.tag {
+            case 1: springLabel.text = "preset: \(animation.preset.rawValue)"
+            case 2: springLabel.text = "curve: \(animation.curve.rawValue)"
+            case 3: springLabel.text = "force: " + String(format: "%.2f", animation.force)
+            case 4: springLabel.text = "duration: " + String(format: "%.2f", animation.duration)
+            default: springLabel.text = "delay: " + String(format: "%.2f", animation.deley)
+            }
+        }
+    }
+    
+    private func animateSpringLabels() {
+        // Анимация чтоб текст на лейблах обновлялся на глазах не резко
+        for springLabel in springLabels {
+            springLabel.animation = "fadeIn"
+            springLabel.duration = 2
+            springLabel.animate()
+        }
     }
 }
